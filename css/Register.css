@@ -1,0 +1,122 @@
+
+* {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  html,
+  body {
+    height: 135vh;
+    margin: 0px;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: changeBackground 18s infinite;
+  }
+
+  .container {
+    width: 100% !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    animation: changeBackground 18s infinite;
+    transition: background-image 1s ease-in-out;
+    border: 0px;
+
+  }
+
+  .w-100 {
+    width: 40% !important;
+    position: absolute !important;
+    top: 10% !important;
+    left: 35% !important;
+    border: 2px solid cadetblue !important;
+    background-color: rgba(250, 235, 215, 0.461);
+    border-radius: 10px !important;
+    border: 0px;
+    margin-top: 40px !important;
+    box-sizing: border-box;
+    /* Add shadow effect */
+    
+  }
+
+  @keyframes changeBackground {
+    0% {
+      background-image: url('../images/qualityy.png');
+    }
+
+    25% {
+      background-image: url('../images/rainbow.png');
+    }
+
+    50% {
+      background-image: url('../images/quality.png');
+    }
+
+    75% {
+      background-image: url('../images/rainflower.png');
+    }
+
+    100% {
+      background-image: url('../images/foggy.jpg');
+    }
+  }
+
+
+
+.content .requirement-list {
+  margin-top: 18px;
+}
+.requirement-list li {
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.requirement-list li i {
+  width: 20px;
+  color: #aaa;
+  font-size: 10px;
+}
+.requirement-list li.valid i {
+  font-size: 30px;
+  color: #4285F4;
+}
+.requirement-list li span {
+  margin-left: 12px;
+  color: #333;
+}
+.requirement-list li.valid span {
+  color: #999;
+}
+
+#pass i {
+  right: 18px;
+  top: 50%;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+input#pass {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 17px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+input#pass:focus {
+  padding: 0 16px;
+  border: 2px solid #4285F4;
+}
+
+.fa-check {
+  font-size: 10px; /* Adjust fa-check*/
+}

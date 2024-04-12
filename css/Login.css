@@ -1,0 +1,81 @@
+
+ * {
+    padding: 0 !important;
+    margin: 0 !important;
+    
+}
+html, body {
+    height: 100vh;
+    margin: 0px;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: changeBackground 18s infinite;
+}
+
+.container {
+    width: 100% !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    animation: changeBackground 18s infinite; /* Apply the animation */
+    transition: background-image 1s ease-in-out;
+    /* padding: 0px; */
+    border: 0px;
+}
+
+.w-100 {
+    width: 40% !important;
+    position: absolute !important;
+    top: 10% !important;
+    left: 35% !important;
+    border: 2px solid cadetblue !important;
+    background-color: rgba(250, 235, 215, 0.461);
+    border-radius: 10px !important;
+    /* padding: 0px; */
+    border: 0px;
+    margin-top: 40px !important;
+    box-sizing: border-box;
+
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url('../images/quailty.png');
+    } 
+    25% {
+        background-image: url('../images/rainbow.png');
+    }
+    50% {
+        background-image: url('../images/quality.png');
+    }
+    75% {
+        background-image: url('../images/rainflower.png');
+    }
+    100% {
+        background-image: url('../images/foggy.jpg');
+    }
+}
+
+/* .form-label{ */
+    /* font-weight: 700; */
+/* } */
+
+#pop{
+    background-color: black!important;
+    border-color: none!important;
+    width: 100px !important;
+    color: white;
+}
+/*  
+@media only screen and (max-width:600px){
+    .w-50{
+        width: 100% !important;
+        left: 0 !important;
+        padding: 0px; 
+        border: 0px;
+    }
+}
+  */
