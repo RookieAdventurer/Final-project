@@ -17,7 +17,7 @@ API
 
 1. Connect to your server
 ```bash
-ssh -i path/to/afa-mgt-system.pem ubuntu@172.203.252.3
+ssh -i path/to/afa-mgt-system.pem RookieAdventurer@172.203.252.3
 ```
 
 2. Navigate to the deployment folder
