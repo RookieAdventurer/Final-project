@@ -44,7 +44,7 @@ Password: 'SsmM!oVImz5o'
 
 ## Documentation
 The documentation is available
-[Documentation](https://github.com/sedemkofi/DevDojo_LnF.git)
+[Documentation](https://github.com/RookieAdventurer/Final-project.git)
 
 ## USED BY
 This project is used by all in need of a weather application that provides real time weather witha fun edge to it.
