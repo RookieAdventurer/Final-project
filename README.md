@@ -17,7 +17,7 @@ API
 
 1. Connect to your server
 ```bash
-ssh -i path/to/afa-mgt-system.pem ubuntu@18.133.105.236
+ssh -i path/to/afa-mgt-system.pem ubuntu@172.203.252.3
 ```
 
 2. Navigate to the deployment folder
@@ -27,7 +27,7 @@ cd /var/www
 
 3. Clone the project repository
 ```bash
-git clone https://github.com/sedemkofi/DevDojo_LnF.git
+git clone https://github.com/RookieAdventurer/Final-project.git
 ```
 
 4. Ensure that PHPMyAdmin is accessible at http://18.133.105.236/phpmyadmin with the following credentials:
