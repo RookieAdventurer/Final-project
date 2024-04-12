@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #**DevDojo Lost and Found System ***
 
 A user-friendly platform designed to provide users with forecasted weather information for specific  locations. User enters a ciry and receives a forecast of the weather in that city. 
@@ -50,3 +51,6 @@ This project is used by all in need of a weather application that provides real 
 
 
 For any inquiries or assistance, please contact the DevDojo support team at **elizabeth.agyemang@ashesi.edu.gh**
+=======
+# Final-project
+>>>>>>> 71fd841bd6e046d46d3616daa85bd30730c2cadb
