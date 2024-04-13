@@ -43,7 +43,7 @@ Password: 'SsmM!oVImz5o'
 ## Functionalites
 1. Weather Map: Users can explore the weather using an interactive map, enhancing their experience visual exploration and detailed weather information  with real-time weather updates. The focus is on  for specific cities.  
 2. Users can set their preferred weather conditions, and the website will send them alerts when the weather matches their preferences. This feature ensures users stay informed and prepared for the day  ahead.
-3. User can update and delete profile pictures.
+3. User can update profile pictures.
 4. User-Friendly Interface: With an intuitive user interface, users can easily navigate the weather app
 
 ## Documentation
