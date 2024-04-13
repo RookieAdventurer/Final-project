@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/userProfile.css">
+  <link rel="stylesheet" type="text/css" href="../css/userProfile.css">
 </head>
 
 <body>
@@ -20,7 +21,6 @@
     $user = getUserById($_SESSION['id'], $conn);
 
   ?>
-
     <div class="d-flex justify-content-center align-items-center vh-100">
 
     <!-- Form for updating profile -->
@@ -28,18 +28,18 @@
 
     <h4 class="display-4 fs-1">Edit Profile</h4><br>
     <!-- error -->
-    <?php if (isset($_POST['error'])) { ?>
+    <?php if (isset($_SESSION['error'])) { ?>
         <div class="alert alert-danger" role="alert">
-            <?php echo $_POST['error']; ?>
+            <?php echo $_SESSION['error']; ?>
         </div>
-    <?php } ?>
+    <?php unset($_SESSION['error']); } ?>
 
     <!-- success -->
-    <?php if (isset($_POST['success'])) { ?>
+    <?php if (isset($_SESSION['success'])) { ?>
         <div class="alert alert-success" role="alert">
-            <?php echo $_POST['success']; ?>
+            <?php echo $_SESSION['success']; ?>
         </div>
-    <?php } ?>
+    <?php unset($_SESSION['success']); } ?>
 
     <!-- First Name -->
     <div class="mb-3">
@@ -57,64 +57,53 @@
     <div class="mb-3">
         <label class="form-label">Profile Picture</label>
         <input type="file" class="form-control" name="pp" id='pp'>
-        <img src="../images/upload/<?= $user['pp'] ?>" class="rounded-circle" style="width: 70px">
+        <img src="../images/upload/<?= $user['pp'] ?>" class="rounded-circle" style="width: 70px; height:70px">
         <input type="text" hidden="hidden" name="old_pp" value="<?= $user['pp'] ?>">
     </div>
 
-    <!-- Update and delete buttons -->
+    <!-- Update button -->
     <button type="submit" class="btn btn-primary" id="updateButton">Update</button>
-    <button type="button" class="btn btn-danger" id="deleteButton">Delete</button>
-    <a href="./index.php" class="btn btn-success">Back</a>
-</form>
+    <!-- Delete button
+    <button type="submit" class="btn btn-danger" name="deleteButton">Delete</button> -->
+    <a href="./home.php" class="btn btn-success">Back</a>
 
-<!-- JavaScript for delete confirmation -->
-<!-- JavaScript for delete confirmation and file validation -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </form>
+    
+    </div>
 
-<script>
-    document.getElementById('updateButton').addEventListener('click', function() {
-        // Check if a file is chosen
-        var fileInput = document.getElementById('pp');
-        if (fileInput.files.length === 0) {
-            alert('Please choose a file');
-            header("Location: ./editProfile.php");
-            return; // Prevent form submission
-        }
+    <!-- JavaScript for delete confirmation and file validation -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <script>
+    document.getElementById('updateButton').addEventListener('click', function(event) {
+    // Check if a file is chosen
+    var fileInput = document.getElementById('pp');
+    if (fileInput.files.length === 0) {
+        // Display error message
+        var errorMessage = document.createElement('div');
+        errorMessage.classList.add('alert', 'alert-danger');
+        errorMessage.textContent = 'Please choose a file';
+        document.getElementById('editProfileForm').prepend(errorMessage);
+        // Prevent form submission
+        event.preventDefault();
+        return false; // Added this line
+    } else {
         // Confirm update
         swal("Success", "Profile Updated Successfully", "success")
             .then((value) => {
                 document.getElementById('editProfileForm').submit(); // Submit the form
+                window.location.href = "./user_profile.php"; // Redirect after successful update
             });
-    });
-
-    document.getElementById('deleteButton').addEventListener('click', function() {
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover your profile!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
-        .then((willDelete) => {
-            if (willDelete) {
-                swal("Poof! Your profile has been deleted!", {
-                    icon: "success",
-                });
-                // Here you can add the logic to delete the profile
-            } else {
-                swal("Your profile is safe!");
-            }
-        });
+    }
+});
       });
-  </script>
+    </script>
 
-  <?php
-  } else {
-    header("Location: ./Login.php");
-    exit;
-  }
-  ?>
+<?php
+  
+  } 
+?>
+
 </body>
 
 </html>
