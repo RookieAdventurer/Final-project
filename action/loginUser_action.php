@@ -25,18 +25,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['fname'] = $user['fname'];
                 $_SESSION['pp'] = $user['pp'];
 
-            
-            } else {
-                header("Location: ../view/index.php"); // Redirect to index page
+                header("Location: ../view/home.php"); // Redirect to index page
                 echo "Successfully created Logged in";
                 exit;
             }
         } else {
-           
-            echo "Incorrect email or password. Please try again.";
-            exit;
+            header("Location: ../view/home.php"); 
         }
     }
- } 
+}
+
+           
+//             echo "Incorrect email or password. Please try again.";
+//             exit;
+//         }
+//     }
+//  } 
 
 ?>

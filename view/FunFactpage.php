@@ -19,7 +19,7 @@
             <a href="" class="logo">Fun Facts<span>.</span></a>
 
             <nav class="navbar">
-                <a href="./index.php">home</a>
+                <a href="./home.php">home</a>
                 <a href="./user_profile.php">Profile</a>
                 <a href="./contact.php">Contact</a>
                 <a href="./signout.php">Signout</a>

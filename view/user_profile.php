@@ -36,7 +36,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && isset($_SESSION['pp']
     <label for="toggler" class="fas f=-bars"></label>
     <a href="" class="logo">Profile<span>.</span></a>
     <nav class="navbar">
-        <a href="./index.php">home</a>
+        <a href="./home.php">home</a>
         <a href="./FunFactpage.php">Fun Facts</a>
         <a href="./contact.php">Contact</a>
         <a href="./signout.php">Signout</a>
@@ -49,7 +49,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && isset($_SESSION['pp']
         <h3 class="display-4"> Hello, <?php echo $firstName; ?></h3>
         <a href="./editProfile.php" class="btn btn-primary">Edit Profile</a>
         <a href="./signout.php" class="btn btn-warning">Logout</a>
-        <a href="./index.php" class="btn btn-success">Back</a>
+        <a href="./home.php" class="btn btn-success">Back</a>
     </div>
 </div>
 </body>

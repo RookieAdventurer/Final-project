@@ -136,24 +136,3 @@ function getWeather() {
 
 
 
-// function getWeather() {
-//     const API_KEY = '324c26f7daf27b38a4af1dbe8fdb9415';
-
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${API_KEY}&units=${units}`)
-//         .then(res => res.json())
-//         .then(data => {
-//             city.innerText = `${data.name}, ${convertCountryCode(data.sys.country)}`;
-//             datetime.innerText = convertTimeStamp(data.dt, data.timezone); 
-//             forecast.innerText = `${data.weather[0].main}`;
-//             temperature.innerHTML = `${data.main.temp.toFixed()}&#176`;
-//             icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" />`;
-//             degree.innerHTML = `<p>Min: ${data.main.temp_min.toFixed()}&#176</p><p>Max: ${data.main.temp_max.toFixed()}&#176</p>`;
-//             clear.innerHTML = `${data.main.feels_like.toFixed()}&#176`;
-//             humidity.innerText = `${data.main.humidity}%`;
-//             wind.innerText = `${data.wind.speed} ${units === "imperial" ? "mph" : "m/s"}`;
-//             pressure.innerText = `${data.main.pressure} hPa`;
-//         })
-//         .catch(error => console.log("Error:", error));
-// }
-
-// window.addEventListener('load', getWeather);

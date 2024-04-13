@@ -1,11 +1,13 @@
-
 <?php
 session_start();
 
+// Include database connection
+include '../settings/connection.php';
+
 // Function to validate the password based on the defined policy
 function validatePassword($password) {
-    // Password length should be exactly 8 characters
-    if (strlen($password) != 8) {
+    // Password length should be at least 8 characters
+    if (strlen($password) < 8) {
         return false;
     }
 
@@ -24,7 +26,7 @@ function validatePassword($password) {
         return false;
     }
 
-    // At least one special character
+    // At least one symbol
     if (!preg_match('/[^A-Za-z0-9]/', $password)) {
         return false;
     }
@@ -34,8 +36,6 @@ function validatePassword($password) {
 }
 
 if (isset($_POST['submitform'])) {
-    include '../settings/connection.php';
-
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
@@ -45,10 +45,11 @@ if (isset($_POST['submitform'])) {
 
     // Validate password
     if (!validatePassword($pass)) {
-        echo "Password must be exactly 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
-        exit; // Add exit statement here
+        $em = "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one symbol.";
+        echo $em;
+        exit;
     }
-    
+
     // Hash the password
     $pass = password_hash($pass, PASSWORD_DEFAULT);
 
@@ -56,7 +57,6 @@ if (isset($_POST['submitform'])) {
     $pp_name = $pp['name'];
     $pp_tmp_name = $pp['tmp_name'];
     $pp_error = $pp['error'];
-    
 
     if ($pp_error === UPLOAD_ERR_OK) {
         // Move the uploaded file to the desired location
@@ -73,39 +73,25 @@ if (isset($_POST['submitform'])) {
                 $sql = "INSERT INTO users (fname, lname, email, password, gender, pp) 
                     VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                if ($stmt->execute([$fname, $lname, $email, $pass, $gender, $new_img_name])) {
-                    $_SESSION['pp'] = $new_img_name; // Store file path in session
-                    // Registration successful, trigger message and redirect
-                    echo "Registration Successful. Your account has been created successfully!";
-                    header("Location: ../view/Login.php");
-                    exit;
-                } else {
-                    // Failed to execute query
-                    echo "Failed to register user.";
-                    exit;
-                }
+                $stmt->execute([$fname, $lname, $email, $pass, $gender, $new_img_name]);
+                $_SESSION['pp'] = $new_img_name;
+                header("Location: ../view/Login.php");
+                echo "Your account has been created successfully";
+                exit;
             } else {
-                // Failed to move uploaded file
-                echo "Failed to upload file.";
+                $em = "Failed to upload file.";
+                echo $em;
                 exit;
             }
         } else {
-            // Invalid file type
-            echo "You can't upload files of this type.";
+            $em = "You can't upload files of this type.";
+            echo $em;
             exit;
         }
     } else {
-        // Error occurred during file upload
-        echo "Error occurred while uploading the file.";
+        $em = "Error occurred while uploading the file.";
+        echo $em;
         exit;
     }
-} else {
-    // Form submission not detected
-    echo "Form submission not detected.";
-    exit;
 }
-
-// Close statement and connection
-$stmt->close();
-$conn->close();
 ?>

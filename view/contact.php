@@ -14,7 +14,7 @@
         <label for="toggler" class="fas fa-bars"></label>
         <a href="" class="logo">Contact Us<span>.</span></a>
         <nav class="navbar">
-            <a href="./index.php">Home</a>
+            <a href="./home.php">Home</a>
             <a href="./FunFactpage.php">Fun fact</a>
             <a href="./user_profile.php">Profile</a>
             <a href="./signout.php">Signout</a>

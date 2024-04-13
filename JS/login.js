@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     button: "OK"
                 }).then(() => {
                     console.log("Redirecting to index.php"); // Add console log here
-                    window.location.href = '../view/index.php'; // Redirect to index page
+                    window.location.href = '../view/home.php'; // Redirect to index page
                 });
             } else {
                 // If password is incorrect, show an error alert

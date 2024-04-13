@@ -17,7 +17,7 @@ API
 
 1. Connect to your server
 ```bash
-ssh -i path/to/afa-mgt-system.pem ubuntu@18.133.105.236
+ssh -i path/to/afa-mgt-system.pem ubuntu@172.203.252.3
 ```
 
 2. Navigate to the deployment folder
@@ -30,7 +30,7 @@ cd /var/www
 git clone https://github.com/sedemkofi/DevDojo_LnF.git
 ```
 
-4. Ensure that PHPMyAdmin is accessible at http://18.133.105.236/phpmyadmin with the following credentials:
+4. Ensure that PHPMyAdmin is accessible at http://127.0.0.1:8888/phpmyadmin with the following credentials:
 
 Username: root
 Password: 'SsmM!oVImz5o'
@@ -44,7 +44,7 @@ Password: 'SsmM!oVImz5o'
 
 ## Documentation
 The documentation is available
-[Documentation](https://github.com/sedemkofi/DevDojo_LnF.git)
+[Documentation](https://github.com/RookieAdventurer/Final-project.git)
 
 ## USED BY
 This project is used by all in need of a weather application that provides real time weather witha fun edge to it.
