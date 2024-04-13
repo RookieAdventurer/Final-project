@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
+if (isset($_SESSION['fname']) && isset($_SESSION['pp'])) {
     include "../settings/connection.php";
 
-    if (isset($_POST['id'], $_POST['fname'], $_POST['old_pp'])) {
+    if (isset($_POST['fname'], $_POST['old_pp'])) {
         // Sanitize input data
         $fname = mysqli_real_escape_string($conn, $_POST['fname']);
         $lname = mysqli_real_escape_string($conn, $_POST['lname']);
