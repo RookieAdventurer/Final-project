@@ -4,9 +4,9 @@
 A user-friendly platform designed to provide users with forecasted weather information for specific  locations. User enters a ciry and receives a forecast of the weather in that city. 
 
 ## TECHNOLOGIES
-PHP
-MYSQL
-BOOTSTRAP 5
+#PHP
+#MYSQL
+#BOOTSTRAP 5
 HTML
 CSS
 Javascript
