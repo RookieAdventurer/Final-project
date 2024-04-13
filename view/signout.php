@@ -63,7 +63,7 @@
                     text: "You logged out!",
                     icon: "success",
                 }).then(() => {
-                    window.location.href = './Register.php'; // Redirect to register page
+                    window.location.href = './Login.php'; // Redirect to register page
                 });
             }
         }
